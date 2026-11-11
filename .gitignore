@@ -1,0 +1,23 @@
+# Prova: fora do repositório até ela rodar
+**/casos/prova-*
+
+# Exports brutos do n8n: trazem dados da conta e ficam fora do repositório
+marketplace/fluxo-n8n/backup-*.json
+marketplace/fluxo-n8n/triador-v2-congelado.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Precaução contra segredos
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+
+# SO e editor
+.DS_Store
+*.swp
+.vscode/
+.idea/

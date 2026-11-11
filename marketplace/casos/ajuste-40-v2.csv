@@ -1,0 +1,41 @@
+id,lote,tipo,nota,texto,nome_cliente,id_pedido,categoria_gabarito,prioridade_gabarito,time_gabarito,assinado_por
+1,ajuste-40,avaliação,4,"Comida boa, só a embalagem veio um pouco amassada. Nada grave.",Bruno Fictício,PED-2001,outros,Baixa,Atendimento,Ely G. Gonçalves
+2,ajuste-40,ticket,,Iogurte chegou estufado e vazando na sacola. Risco claro.,Carla Fictício,PED-2002,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+3,ajuste-40,avaliação,1,Pedi sushi. O peixe cheirava mal e estava morno. Quase comi.,Diego Fictício,PED-2003,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+4,ajuste-40,ticket,,A carne moída veio com cheiro azedo e escorria líquido. Não deu pra usar. Foi o segundo pedido da semana.,Elena Fictício,PED-2004,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+5,ajuste-40,avaliação,5,"Entrega rápida e quente. Só achei o app um pouco confuso na hora do pagamento. Mora em apto, porteiro recebeu.",Fábio Fictício,PED-2005,outros,Baixa,Atendimento,Ely G. Gonçalves
+6,ajuste-40,avaliação,3,"App mostrou 25 min, levou 55. Pedido chegou completo.",Gabi Fictício,PED-2006,atraso,Média,Logística,Ely G. Gonçalves
+7,ajuste-40,avaliação,4,"Pedido ok. A sacola plástica veio rasgada, mas nada vazou. Foi o segundo pedido da semana.",Hugo Fictício,PED-2007,outros,Baixa,Atendimento,Ely G. Gonçalves
+8,ajuste-40,ticket,,"Fui cobrado R$ 2,50 de taxa de embalagem que não aparecia no carrinho.",Iris Fictício,PED-2008,preço,Média,Pagamentos,Ely G. Gonçalves
+9,ajuste-40,avaliação,4,Tudo certo. Sugestão: avisar melhor quando o entregador substitui. Paguei no crédito.,João Fictício,PED-2009,outros,Baixa,Atendimento,Ely G. Gonçalves
+10,ajuste-40,ticket,,Queria saber se posso trocar o endereço depois de confirmar o pedido. Detalhe: foi no jantar.,Karen Fictício,PED-2010,outros,Baixa,Atendimento,Ely G. Gonçalves
+11,ajuste-40,ticket,,Pedi o estorno de um pedido cancelado há 7 dias e os R$ 52 ainda aparecem na fatura.,Leo Fictício,PED-2011,preço,Alta,Pagamentos,Ely G. Gonçalves
+12,ajuste-40,avaliação,3,"Chegou 35 min depois do horário. Comida ok, só atrasou o almoço.",Maya Fictício,PED-2012,atraso,Média,Logística,Ely G. Gonçalves
+13,ajuste-40,avaliação,2,Taxa de entrega veio R$ 3 a mais que o mostrado no carrinho. Detalhe: foi no jantar.,Nina Fictício,PED-2013,preço,Média,Pagamentos,Ely G. Gonçalves
+14,ajuste-40,ticket,,"Cupom de R$ 5 não aplicou. Diferença pequena, mas queria o desconto. Detalhe: foi no jantar.",Otto Fictício,PED-2014,preço,Média,Pagamentos,Ely G. Gonçalves
+15,ajuste-40,avaliação,3,Pedi 2 refrigerantes e veio só 1. Resto do pedido ok. Paguei no crédito.,Paula Fictício,PED-2015,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+16,ajuste-40,avaliação,1,Esperamos 2h40 num pedido marcado pra 35 min. Chegou frio e tarde demais pra jantar. Pedido feito pelo app.,Rafa Fictício,PED-2016,atraso,Alta,Logística,Ely G. Gonçalves
+17,ajuste-40,ticket,,O cashback de R$ 10 da semana passada sumiu da minha carteira sem eu ter usado.,Sofia Fictício,PED-2017,preço,Média,Pagamentos,Ely G. Gonçalves
+18,ajuste-40,ticket,,"Trocaram o sabor do suco. Não é o que pedi, mas consigo beber. Paguei no crédito.",Tiago Fictício,PED-2018,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+19,ajuste-40,avaliação,2,"Comprei queijo por peso no mercado e cobraram 1,2 kg, mas a etiqueta da embalagem diz 800 g.",Úrsula Fictício,PED-2019,preço,Média,Pagamentos,Ely G. Gonçalves
+20,ajuste-40,ticket,,"Paguei a gorjeta do entregador pelo app e ela foi cobrada de novo, separada, no cartão.",Vitor Fictício,PED-2020,preço,Alta,Pagamentos,Ely G. Gonçalves
+21,ajuste-40,ticket,,Reclamei ontem do atraso e o suporte já resolveu com crédito. Só registrando. Detalhe: foi no jantar.,Wendy Fictício,PED-2021,atraso,Baixa,Atendimento,Ely G. Gonçalves
+22,ajuste-40,avaliação,2,Cobraram taxa de entrega num pedido que eu retirei no balcão da loja.,Yuri Fictício,PED-2022,preço,Média,Pagamentos,Ely G. Gonçalves
+23,ajuste-40,ticket,,"Pedido de ontem às 20h nunca chegou. Já se passaram mais de 16 horas. Mora em apto, porteiro recebeu.",Zara Fictício,PED-2023,atraso,Alta,Logística,Ely G. Gonçalves
+24,ajuste-40,avaliação,1,Marcaram entrega em 40 min. Depois de 3 horas cancelei. Nada veio.,Bia Fictício,PED-2024,atraso,Alta,Logística,Ely G. Gonçalves
+25,ajuste-40,avaliação,4,"Entregador super gentil, mas a batata frita do combo não veio.",Caio Fictício,PED-2025,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+26,ajuste-40,avaliação,3,A caixa da pizza chegou amassada e metade da cobertura ficou grudada na tampa.,Duda Fictício,PED-2026,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+27,ajuste-40,ticket,,Faltou o molho e o guardanapo. O prato principal veio certo.,Enzo Fictício,PED-2027,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+28,ajuste-40,avaliação,1,"A coxinha veio crua e gelada por dentro, com a massa mole. Não deu pra comer.",Fernanda Fictício,PED-2028,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+29,ajuste-40,avaliação,2,A saladinha veio com folha podre e inseto. Joguei fora. Foi o segundo pedido da semana.,Gustavo Fictício,PED-2029,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+30,ajuste-40,ticket,,O chat do app fechou sozinho. Consegui falar por e-mail depois. Resolvido. Pedido feito pelo app.,Helena Fictício,PED-2030,outros,Baixa,Atendimento,Ely G. Gonçalves
+31,ajuste-40,ticket,,O item errado de ontem já foi trocado pelo suporte. Só registrando que deu tudo certo.,Igor Fictício,PED-2031,qualidade do pedido,Baixa,Atendimento,Ely G. Gonçalves
+32,ajuste-40,ticket,,Já são 1h40 de espera e o restaurante nem começou a preparar. A previsão era de 30 minutos.,Julia Fictício,PED-2032,atraso,Alta,Logística,Ely G. Gonçalves
+33,ajuste-40,ticket,,"Entrega marcada pra 19h, chegou 19:50. Ainda dava pra jantar.",Kai Fictício,PED-2033,atraso,Média,Logística,Ely G. Gonçalves
+34,ajuste-40,avaliação,3,"Chegou uns 15 minutos depois do previsto. Nada demais, só o mapa dizia que estava chegando fazia tempo.",Lara Fictício,PED-2034,atraso,Média,Logística,Ely G. Gonçalves
+35,ajuste-40,avaliação,1,O entregador foi para a cidade vizinha por engano. O pedido chegou 1h20 depois do combinado e a comida estava fria.,Miguel Fictício,PED-2035,atraso,Alta,Logística,Ely G. Gonçalves
+36,ajuste-40,ticket,,Vocês aceitam vale-refeição como pagamento no app?,Noa Fictício,PED-2036,outros,Baixa,Atendimento,Ely G. Gonçalves
+37,ajuste-40,ticket,,Dúvida: o cupom PRIMEIRA10 ainda vale pra mercado ou só restaurante?,Olivia Fictício,PED-2037,outros,Baixa,Atendimento,Ely G. Gonçalves
+38,ajuste-40,avaliação,5,"Adorei o mercado, chegou tudo bem embalado. Só queria saber como salvar uma lista de compras fixa.",Pedro Fictício,PED-2038,outros,Baixa,Atendimento,Ely G. Gonçalves
+39,ajuste-40,ticket,,"Fui cobrado duas vezes no cartão pelo mesmo pedido PED-2039. Valores iguais. Mora em apto, porteiro recebeu.",Quinn Fictício,PED-2039,preço,Alta,Pagamentos,Ely G. Gonçalves
+40,ajuste-40,ticket,,Como faço para mudar o e-mail cadastrado na minha conta?,Rita Fictício,PED-2040,outros,Baixa,Atendimento,Ely G. Gonçalves
