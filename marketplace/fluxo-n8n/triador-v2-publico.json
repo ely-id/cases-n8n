@@ -1,0 +1,484 @@
+[
+  {
+    "updatedAt": "2026-11-10T16:04:19.091Z",
+    "createdAt": "2026-11-05T09:11:51.141Z",
+    "name": "Triador de review e atendimento - portfólio iFood",
+    "description": null,
+    "active": true,
+    "isArchived": false,
+    "nodes": [
+      {
+        "parameters": {
+          "formTitle": "Central de review e atendimento",
+          "formDescription": "Envie uma avaliação ou uma reclamação. Este é um projeto de portfólio e usa somente dados fictícios.",
+          "formFields": {
+            "values": [
+              {
+                "fieldLabel": "Tipo",
+                "fieldType": "dropdown",
+                "fieldName": "tipo",
+                "fieldOptions": {
+                  "values": [
+                    {
+                      "option": "avaliação"
+                    },
+                    {
+                      "option": "ticket"
+                    }
+                  ]
+                },
+                "requiredField": true
+              },
+              {
+                "fieldLabel": "Nota (1 a 5, se for avaliação)",
+                "fieldType": "dropdown",
+                "fieldName": "nota",
+                "fieldOptions": {
+                  "values": [
+                    {
+                      "option": "1"
+                    },
+                    {
+                      "option": "2"
+                    },
+                    {
+                      "option": "3"
+                    },
+                    {
+                      "option": "4"
+                    },
+                    {
+                      "option": "5"
+                    }
+                  ]
+                }
+              },
+              {
+                "fieldLabel": "Seu nome",
+                "fieldName": "nome_cliente",
+                "requiredField": true
+              },
+              {
+                "fieldLabel": "Número do pedido (opcional)",
+                "fieldName": "id_pedido"
+              },
+              {
+                "fieldLabel": "Conte o que aconteceu",
+                "fieldType": "textarea",
+                "fieldName": "texto",
+                "requiredField": true
+              }
+            ]
+          },
+          "responseMode": "lastNode",
+          "options": {
+            "appendAttribution": false,
+            "buttonLabel": "Enviar",
+            "path": "review-atendimento",
+            "respondWithOptions": {
+              "values": {
+                "formSubmittedText": "Recebemos o seu relato. A equipe responsável vai analisar e entrar em contato."
+              }
+            }
+          }
+        },
+        "id": "b2000000-0000-4000-8000-000000000001",
+        "name": "Formulário de review",
+        "type": "n8n-nodes-base.formTrigger",
+        "typeVersion": 2.6,
+        "position": [
+          0,
+          0
+        ],
+        "webhookId": "7a1c9e2d-aaaa-4b2c-8d01-1f2e3d4c5b01"
+      },
+      {
+        "parameters": {
+          "httpMethod": "POST",
+          "path": "review-atendimento-lote",
+          "responseMode": "lastNode",
+          "options": {}
+        },
+        "id": "b2000000-0000-4000-8000-000000000002",
+        "name": "Entrada em lote",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2.1,
+        "position": [
+          0,
+          224
+        ],
+        "webhookId": "7a1c9e2d-bbbb-4b2c-8d01-1f2e3d4c5b02"
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "inicio_ms",
+                "name": "inicio_ms",
+                "value": "={{ Date.now() }}",
+                "type": "number"
+              },
+              {
+                "id": "origem",
+                "name": "origem",
+                "value": "={{ $json.body ? 'lote (webhook)' : 'formulário' }}",
+                "type": "string"
+              },
+              {
+                "id": "tipo",
+                "name": "tipo",
+                "value": "={{ ($json.body ?? $json).tipo ?? '' }}",
+                "type": "string"
+              },
+              {
+                "id": "nota",
+                "name": "nota",
+                "value": "={{ ($json.body ?? $json).nota ?? '' }}",
+                "type": "string"
+              },
+              {
+                "id": "texto",
+                "name": "texto",
+                "value": "={{ ($json.body ?? $json).texto ?? '' }}",
+                "type": "string"
+              },
+              {
+                "id": "nome_cliente",
+                "name": "nome_cliente",
+                "value": "={{ ($json.body ?? $json).nome_cliente ?? '' }}",
+                "type": "string"
+              },
+              {
+                "id": "id_pedido",
+                "name": "id_pedido",
+                "value": "={{ ($json.body ?? $json).id_pedido ?? '' }}",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "b2000000-0000-4000-8000-000000000003",
+        "name": "Organizar dados do relato",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          288,
+          112
+        ]
+      },
+      {
+        "parameters": {
+          "promptType": "define",
+          "text": "=Tipo: {{ $json.tipo }}\nNota: {{ $json.nota || '(não informada)' }}\nNome: {{ $json.nome_cliente }}\nPedido: {{ $json.id_pedido || '(não informado)' }}\nRelato:\n{{ $json.texto }}",
+          "hasOutputParser": true,
+          "messages": {
+            "messageValues": [
+              {
+                "message": "=Você é o triador de avaliações e reclamações de um marketplace fictício de delivery e mercado.\nAnalise o relato do cliente e responda SOMENTE no formato pedido.\n\nHoje é {{ $now.setZone('America/Sao_Paulo').toFormat('yyyy-MM-dd') }}.\n\nCATEGORIAS (escolha exatamente uma):\n- \"qualidade do pedido\": faltou item, veio errado, veio estragado ou impróprio, item danificado.\n- \"atraso\": demora na entrega, não chegou, passou do horário combinado.\n- \"preço\": cobrança errada ou duplicada, cupom que não aplicou, valor divergente.\n- \"outros\": elogio com ressalva, dúvida geral, ou qualquer coisa que não se encaixe acima.\n\nTIME (escolha exatamente um):\n- \"Qualidade\": problemas de item errado, faltando, estragado ou impróprio.\n- \"Logística\": atraso ou pedido que não chegou.\n- \"Pagamentos\": quando há valor a corrigir (cobrança, cupom, valor). Dúvida sem valor a corrigir vai para \"Atendimento\".\n- \"Atendimento\": dúvida, elogio com ressalva, e casos que precisam de conversa e não se encaixam nos outros times.\n\nPRIORIDADE:\n- \"Alta\": comida ou item impróprio, pedido que impede o uso, atraso extremo (não chegou ou passou muito do combinado), cobrança duplicada.\n- \"Média\": atraso de até cerca de 1 hora, item errado, faltando ou danificado que não inviabiliza o pedido, diferença pequena de valor.\n- \"Baixa\": elogio com ressalva, dúvida de cupom, reclamação antiga que o próprio texto já diz que foi resolvida.\nA justificativa deve ter no máximo 20 palavras.\n\nREGRAS DE DESEMPATE:\n1. A nota não decide a categoria. Se a ressalva for um problema da lista (item errado, faltando ou danificado; atraso; cobrança), classifique pelo problema. Use \"outros\" (elogio com ressalva) só quando a ressalva não for um desses problemas: embalagem amassada sem dano ao conteúdo, app confuso, sugestão.\n2. Embalagem ou sacola danificada sem dano ao conteúdo: \"outros\", Baixa, Atendimento. Se o conteúdo foi afetado: \"qualidade do pedido\".\n3. Item errado, faltando ou danificado que não inviabiliza o pedido: Média. Item impróprio para consumo, com risco à saúde, ou pedido inutilizável: Alta.\n4. Atraso: chegou até cerca de 1 hora depois do combinado = Média. Passou de 1 hora, não chegou, ou consta como entregue sem ter chegado = Alta.\n5. Dinheiro: use \"preço\" e Pagamentos quando houver valor a corrigir. Cobrança duplicada ou cobrança do valor inteiro sem o pedido (cancelado, recusado ou não entregue) = Alta. Diferença pequena (taxa, cupom, cashback, poucos reais) = Média.\n6. Dúvida sem valor a corrigir (regra de cupom ou cashback, forma de pagamento, conta, cadastro, uso do app): \"outros\", Baixa, Atendimento.\n7. Reclamação que o próprio texto diz que já foi resolvida: categoria = o problema original; prioridade Baixa; time Atendimento (não há ação pendente, só registro).\n8. Detalhes que não descrevem o problema (horário da refeição, forma de pagamento usada, onde a pessoa mora, quantos pedidos fez na semana) não mudam a classificação.\n\nRESUMO: 1 linha, no máximo 15 palavras.\nRESPOSTA SUGERIDA: primeira resposta cordial ao cliente, em português, tom de atendimento ao cliente, 2 a 3 frases, chamando a pessoa pelo primeiro nome, sem prometer prazos que não foram dados. Se for avaliação com nota, reconheça a nota sem soar automático.\nREGRA GERAL DA RESPOSTA SUGERIDA: não afirme políticas, regras, prazos, valores ou funcionalidades que não estejam no relato. Quando o cliente fizer uma pergunta, diga que o atendimento vai verificar e responder. Não prometa prazo (sem \"imediatamente\", \"em breve\", \"o mais rápido possível\")."
+              }
+            ]
+          },
+          "batching": {}
+        },
+        "id": "b2000000-0000-4000-8000-000000000004",
+        "name": "IA classifica o relato",
+        "type": "@n8n/n8n-nodes-langchain.chainLlm",
+        "typeVersion": 1.9,
+        "position": [
+          560,
+          112
+        ],
+        "retryOnFail": true,
+        "maxTries": 3,
+        "waitBetweenTries": 5000
+      },
+      {
+        "parameters": {
+          "modelName": "models/gemini-3.5-flash-lite",
+          "options": {
+            "temperature": 0.2
+          }
+        },
+        "id": "b2000000-0000-4000-8000-000000000005",
+        "name": "Gemini 3.5 Flash Lite",
+        "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+        "typeVersion": 1.2,
+        "position": [
+          512,
+          320
+        ],
+        "credentials": {
+          "googlePalmApi": {
+            "name": "Google Gemini(PaLM) Api account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "schemaType": "manual",
+          "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"categoria\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"qualidade do pedido\",\n        \"atraso\",\n        \"preço\",\n        \"outros\"\n      ]\n    },\n    \"prioridade\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"Alta\",\n        \"Média\",\n        \"Baixa\"\n      ]\n    },\n    \"justificativa_prioridade\": {\n      \"type\": \"string\"\n    },\n    \"time\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"Atendimento\",\n        \"Logística\",\n        \"Qualidade\",\n        \"Pagamentos\"\n      ]\n    },\n    \"resumo\": {\n      \"type\": \"string\"\n    },\n    \"resposta_sugerida\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"categoria\",\n    \"prioridade\",\n    \"justificativa_prioridade\",\n    \"time\",\n    \"resumo\",\n    \"resposta_sugerida\"\n  ]\n}"
+        },
+        "id": "b2000000-0000-4000-8000-000000000006",
+        "name": "Formato da resposta",
+        "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+        "typeVersion": 1.3,
+        "position": [
+          688,
+          320
+        ]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "data_hora",
+                "name": "data_hora",
+                "value": "={{ $now.setZone('America/Sao_Paulo').toFormat('dd/MM/yyyy HH:mm:ss') }}",
+                "type": "string"
+              },
+              {
+                "id": "origem",
+                "name": "origem",
+                "value": "={{ $('Organizar dados do relato').item.json.origem }}",
+                "type": "string"
+              },
+              {
+                "id": "tipo",
+                "name": "tipo",
+                "value": "={{ $('Organizar dados do relato').item.json.tipo }}",
+                "type": "string"
+              },
+              {
+                "id": "nota",
+                "name": "nota",
+                "value": "={{ $('Organizar dados do relato').item.json.nota }}",
+                "type": "string"
+              },
+              {
+                "id": "texto",
+                "name": "texto",
+                "value": "={{ $('Organizar dados do relato').item.json.texto }}",
+                "type": "string"
+              },
+              {
+                "id": "nome_cliente",
+                "name": "nome_cliente",
+                "value": "={{ $('Organizar dados do relato').item.json.nome_cliente }}",
+                "type": "string"
+              },
+              {
+                "id": "id_pedido",
+                "name": "id_pedido",
+                "value": "={{ $('Organizar dados do relato').item.json.id_pedido }}",
+                "type": "string"
+              },
+              {
+                "id": "categoria_ia",
+                "name": "categoria_ia",
+                "value": "={{ $json.output.categoria }}",
+                "type": "string"
+              },
+              {
+                "id": "prioridade",
+                "name": "prioridade",
+                "value": "={{ $json.output.prioridade }}",
+                "type": "string"
+              },
+              {
+                "id": "justificativa_prioridade",
+                "name": "justificativa_prioridade",
+                "value": "={{ $json.output.justificativa_prioridade }}",
+                "type": "string"
+              },
+              {
+                "id": "time",
+                "name": "time",
+                "value": "={{ $json.output.time }}",
+                "type": "string"
+              },
+              {
+                "id": "resumo",
+                "name": "resumo",
+                "value": "={{ $json.output.resumo }}",
+                "type": "string"
+              },
+              {
+                "id": "resposta_sugerida",
+                "name": "resposta_sugerida",
+                "value": "={{ $json.output.resposta_sugerida }}",
+                "type": "string"
+              },
+              {
+                "id": "tempo_processamento_s",
+                "name": "tempo_processamento_s",
+                "value": "={{ Math.round((Date.now() - $('Organizar dados do relato').item.json.inicio_ms) / 100) / 10 }}",
+                "type": "number"
+              },
+              {
+                "id": "30fb6660-fbf1-43c5-8f41-e66f47672037",
+                "name": "versao_prompt",
+                "value": "v2",
+                "type": "string"
+              },
+              {
+                "id": "a4ae52ed-91cc-4c63-9dc9-27cbd6a1d81e",
+                "name": "modelo",
+                "value": "gemini-3.5-flash-lite",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "b2000000-0000-4000-8000-000000000007",
+        "name": "Montar linha",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          912,
+          112
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "append",
+          "documentId": {
+            "__rl": true,
+            "mode": "id",
+            "value": "SUBSTITUA_PELO_ID_DA_SUA_PLANILHA"
+          },
+          "sheetName": {
+            "__rl": true,
+            "mode": "name",
+            "value": "triagens"
+          },
+          "columns": {
+            "mappingMode": "autoMapInputData",
+            "value": {},
+            "matchingColumns": [],
+            "schema": [],
+            "attemptToConvertTypes": false,
+            "convertFieldsToString": false
+          },
+          "options": {}
+        },
+        "id": "b2000000-0000-4000-8000-000000000008",
+        "name": "Salvar na planilha",
+        "type": "n8n-nodes-base.googleSheets",
+        "typeVersion": 4.7,
+        "position": [
+          1152,
+          112
+        ],
+        "credentials": {
+          "googleSheetsOAuth2Api": {
+            "name": "Google Sheets account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Formulário de review": {
+        "main": [
+          [
+            {
+              "node": "Organizar dados do relato",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Entrada em lote": {
+        "main": [
+          [
+            {
+              "node": "Organizar dados do relato",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Organizar dados do relato": {
+        "main": [
+          [
+            {
+              "node": "IA classifica o relato",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "IA classifica o relato": {
+        "main": [
+          [
+            {
+              "node": "Montar linha",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Montar linha": {
+        "main": [
+          [
+            {
+              "node": "Salvar na planilha",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Gemini 3.5 Flash Lite": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "IA classifica o relato",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Formato da resposta": {
+        "ai_outputParser": [
+          [
+            {
+              "node": "IA classifica o relato",
+              "type": "ai_outputParser",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1",
+      "timezone": "America/Sao_Paulo",
+      "saveDataSuccessExecution": "all",
+      "saveManualExecutions": true,
+      "binaryMode": "separate"
+    },
+    "staticData": null,
+    "meta": {
+      "description": "v1 - gemini 3.5 flash lite"
+    },
+    "nodeGroups": [],
+    "pinData": {},
+    "versionCounter": 13,
+    "triggerCount": 2,
+    "sourceWorkflowId": null,
+    "tags": [],
+    "versionMetadata": {
+      "name": "Version 0d251e0c",
+      "description": ""
+    }
+  }
+]
