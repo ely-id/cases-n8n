@@ -1,0 +1,41 @@
+id,lote,tipo,nota,texto,nome_cliente,id_pedido,categoria_gabarito,prioridade_gabarito,time_gabarito,assinado_por
+1,prova-40,ticket,,O app ficou em inglês depois da última atualização. Como volto pro português?,Afonso Fictício,PED-3001,outros,Baixa,Atendimento,Ely G. Gonçalves
+2,prova-40,ticket,,Dá pra agendar uma compra de mercado para a semana que vem?,Benedita Fictício,PED-3002,outros,Baixa,Atendimento,Ely G. Gonçalves
+3,prova-40,avaliação,4,Gostei da variedade do mercado. Seria bom ter um filtro de produtos sem lactose.,Cristiano Fictício,PED-3003,outros,Baixa,Atendimento,Ely G. Gonçalves
+4,prova-40,ticket,,Pedi às 12h pro almoço e chegou às 15h. A essa altura eu já tinha comido outra coisa.,Daniela Fictício,PED-3004,atraso,Alta,Logística,Ely G. Gonçalves
+5,prova-40,avaliação,3,"O item estava R$ 12,90 no cardápio e no recibo saiu R$ 14,90.",Emanuel Fictício,PED-3005,preço,Média,Pagamentos,Ely G. Gonçalves
+6,prova-40,avaliação,3,Veio sem talheres e sem o sachê de ketchup que eu tinha pedido. O lanche em si estava ótimo.,Fabiana Fictício,PED-3006,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+7,prova-40,ticket,,"Apareceram duas cobranças de R$ 64,90 no meu cartão para o mesmo pedido.",Gilberto Fictício,PED-3007,preço,Alta,Pagamentos,Ely G. Gonçalves
+8,prova-40,ticket,,Faltou o pão de alho que vinha no combo. O resto chegou certinho.,Hortência Fictício,PED-3008,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+9,prova-40,avaliação,2,"Pedi pizza de calabresa e veio de frango com catupiry. Comi porque estava com fome, mas não era o que eu queria.",Ivan Fictício,PED-3009,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+10,prova-40,ticket,,Meu cartão foi cobrado três vezes no mesmo pedido de mercado e o banco bloqueou o cartão por suspeita.,Joana Fictício,PED-3010,preço,Alta,Pagamentos,Ely G. Gonçalves
+11,prova-40,avaliação,1,Achei um pedaço de plástico duro no meio do arroz. Parei de comer na hora.,Kleber Fictício,PED-3011,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+12,prova-40,ticket,,"Cancelei o pedido antes de o restaurante aceitar e mesmo assim fui cobrado o valor inteiro, R$ 89.",Luana Fictício,PED-3012,preço,Alta,Pagamentos,Ely G. Gonçalves
+13,prova-40,avaliação,3,"Demorou 1h10 num pedido previsto pra 30 minutos. Veio tudo certo, só um pouco morno.",Mateus Fictício,PED-3013,atraso,Média,Logística,Ely G. Gonçalves
+14,prova-40,avaliação,2,O entregador ligou dizendo que não achava o endereço e chegou 25 minutos depois do previsto.,Nádia Fictício,PED-3014,atraso,Média,Logística,Ely G. Gonçalves
+15,prova-40,avaliação,1,"O valor foi debitado, mas o pedido sumiu do app e nunca foi enviado ao restaurante.",Osvaldo Fictício,PED-3015,preço,Alta,Pagamentos,Ely G. Gonçalves
+16,prova-40,avaliação,3,"Atrasou uns 20 minutos além da previsão, mas a comida chegou quente.",Patrícia Fictício,PED-3016,atraso,Média,Logística,Ely G. Gonçalves
+17,prova-40,avaliação,1,Esperei 1h30 e o pedido não apareceu. O app agora diz que não tem previsão.,Raul Fictício,PED-3017,atraso,Alta,Logística,Ely G. Gonçalves
+18,prova-40,ticket,,Como faço pra tirar do app um cartão antigo que ficou salvo?,Simone Fictício,PED-3018,outros,Baixa,Atendimento,Ely G. Gonçalves
+19,prova-40,avaliação,2,O total no checkout veio R$ 4 maior que a soma dos itens. Não entendi de onde saiu.,Tadeu Fictício,PED-3019,preço,Média,Pagamentos,Ely G. Gonçalves
+20,prova-40,avaliação,2,A lata de atum veio estufada e amassada. Joguei fora sem abrir.,Ubirajara Fictício,PED-3020,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+21,prova-40,ticket,,"O pedido agendado pras 19h do aniversário chegou às 21h30, quando os convidados já tinham ido embora.",Vanessa Fictício,PED-3021,atraso,Alta,Logística,Ely G. Gonçalves
+22,prova-40,avaliação,4,"Comida muito boa, mas mandaram refrigerante normal em vez do zero que eu pedi.",Wagner Fictício,PED-3022,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+23,prova-40,avaliação,2,"Dos 12 ovos, 4 chegaram quebrados e a caixa veio toda melada. Os outros deu pra usar.",Xavier Fictício,PED-3023,qualidade do pedido,Média,Qualidade,Ely G. Gonçalves
+24,prova-40,ticket,,Dúvida: o cashback da compra passada some se eu não usar este mês?,Yara Fictício,PED-3024,outros,Baixa,Atendimento,Ely G. Gonçalves
+25,prova-40,ticket,,"Paguei no Pix, o app travou e eu mandei de novo. Saíram dois Pix de R$ 37 e só existe um pedido.",Zilda Fictício,PED-3025,preço,Alta,Pagamentos,Ely G. Gonçalves
+26,prova-40,avaliação,2,A compra do mercado era pra janela das 10h às 12h e chegou às 12h40.,Adriano Fictício,PED-3026,atraso,Média,Logística,Ely G. Gonçalves
+27,prova-40,ticket,,O pedido que chegou era de outra pessoa: outro nome na sacola e nenhum item do que eu pedi.,Quirino Fictício,PED-3027,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+28,prova-40,avaliação,5,"Pedido perfeito, como sempre. Única coisa: o app pediu avaliação três vezes seguidas.",Cláudio Fictício,PED-3028,outros,Baixa,Atendimento,Ely G. Gonçalves
+29,prova-40,ticket,,"Recebi o reembolso do item que faltou, mas veio R$ 3 a menos do que paguei por ele.",Denise Fictício,PED-3029,preço,Média,Pagamentos,Ely G. Gonçalves
+30,prova-40,ticket,,"O entregador marcou como entregue, mas no endereço errado. Fui até a portaria e não tem nada lá.",Elias Fictício,PED-3030,atraso,Alta,Logística,Ely G. Gonçalves
+31,prova-40,avaliação,4,"Entregador educado e rápido. Só reparei que a sacola veio sem lacre, mas estava tudo certo.",Francine Fictício,PED-3031,outros,Baixa,Atendimento,Ely G. Gonçalves
+32,prova-40,ticket,,O frango da marmita veio com cheiro forte e gosto de passado. Não tive coragem de comer.,Geraldo Fictício,PED-3032,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+33,prova-40,ticket,,Posso pedir nota fiscal com CNPJ depois que o pedido já foi entregue?,Iolanda Fictício,PED-3033,outros,Baixa,Atendimento,Ely G. Gonçalves
+34,prova-40,ticket,,"Usei o cupom de frete grátis, ele apareceu aplicado, mas a taxa de entrega de R$ 6,99 foi cobrada mesmo assim.",Juliano Fictício,PED-3034,preço,Média,Pagamentos,Ely G. Gonçalves
+35,prova-40,avaliação,2,Cobraram uma taxa de serviço de 10% num pedido de delivery. Não sabia que tinha isso.,Larissa Fictício,PED-3035,preço,Média,Pagamentos,Ely G. Gonçalves
+36,prova-40,avaliação,1,"O açaí veio aberto, derramou na sacola inteira e não sobrou nada pra comer.",Murilo Fictício,PED-3036,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+37,prova-40,ticket,,"Semana passada meu pedido atrasou, mas já recebi o reembolso. Só queria deixar registrado.",Neusa Fictício,PED-3037,atraso,Baixa,Atendimento,Ely G. Gonçalves
+38,prova-40,avaliação,5,Melhor hambúrguer que já pedi aqui. Só fiquei sem saber se dá pra pedir sem cebola da próxima vez.,Orlando Fictício,PED-3038,outros,Baixa,Atendimento,Ely G. Gonçalves
+39,prova-40,ticket,,O leite que veio na compra do mercado está com a validade vencida desde a semana passada.,Rosana Fictício,PED-3039,qualidade do pedido,Alta,Qualidade,Ely G. Gonçalves
+40,prova-40,ticket,,Faz 2 horas que o pedido está como saiu para entrega e nada. A previsão era de 40 minutos.,Sérgio Fictício,PED-3040,atraso,Alta,Logística,Ely G. Gonçalves
