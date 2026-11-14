@@ -1,7 +1,7 @@
 # Congelamento do prompt v2
 
 - **Data e hora:** 2026-11-10 13:22:53 -0300
-- **Fluxo:** Triador de review e atendimento - portfólio iFood (`BQjYcn6JmGWBLzee`)
+- **Fluxo:** Triador de review e atendimento (`BQjYcn6JmGWBLzee`)
 - **Versão publicada:** `0d251e0c-7952-4071-824a-bd3fdf056571`
 - **versao_prompt:** `v2`
 - **SHA-256 de `fluxo-n8n/prompt-v2-congelado.txt`:** `53bea33a2d85539a41a34072edcbb1bbe06a21d9a9a1b91acf5099dcad36662e`
